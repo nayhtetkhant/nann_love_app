@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-body: var(--font-body);
+  --font-display: var(--font-display);
+
+  --color-cream: #fff7f5;
+  --color-blush: #ffe4ec;
+  --color-rose: #f472b6;
+  --color-rose-deep: #db2777;
+  --color-plum: #4c1d95;
+}
+
+:root {
+  --background: #fff7f5;
+  --foreground: #3f2b39;
+}
+
+body {
+  background:
+    radial-gradient(
+      1100px 620px at 12% -8%,
+      #ffe4ec 0%,
+      rgba(255, 228, 236, 0) 60%
+    ),
+    radial-gradient(
+      900px 520px at 92% 4%,
+      #f3e8ff 0%,
+      rgba(243, 232, 255, 0) 58%
+    ),
+    radial-gradient(
+      800px 700px at 50% 108%,
+      #fff1e6 0%,
+      rgba(255, 241, 230, 0) 60%
+    ),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), "Segoe UI", system-ui, sans-serif;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), Georgia, serif;
+  }
+
+  .card {
+    @apply rounded-3xl border border-white/70 bg-white/70 shadow-[0_18px_50px_-24px_rgba(219,39,119,0.35)] backdrop-blur-md;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-rose/15 px-3 py-1 text-xs font-semibold tracking-wide text-rose-deep uppercase;
+  }
+}
+
+/* Soft floating hearts in the background. */
+@keyframes float-up {
+  0% {
+    transform: translateY(0) scale(0.85) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(-42vh) scale(1.05) rotate(8deg);
+  }
+  100% {
+    transform: translateY(-86vh) scale(0.8) rotate(-6deg);
+    opacity: 0;
+  }
+}
+
+.heart {
+  position: absolute;
+  bottom: -6vh;
+  animation: float-up linear infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heart {
+    animation: none;
+    opacity: 0.3;
+  }
+}
+

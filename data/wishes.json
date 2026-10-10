@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Watch the sunrise together",
+    "category": "Adventure",
+    "done": false
+  },
+  {
+    "id": 2,
+    "title": "Visit the sea and write our names in the sand",
+    "category": "Travel",
+    "done": false
+  },
+  {
+    "id": 3,
+    "title": "Learn to cook her favourite dish",
+    "category": "Everyday",
+    "done": true
+  },
+  {
+    "id": 4,
+    "title": "A photo album of every year together",
+    "category": "Us",
+    "done": false
+  }
+]
